@@ -26,6 +26,8 @@ app.use(method("_method"));
 app.use(expressSession({ secret: "ROMAN", resave: true, saveUninitialized: true }));
 app.use(morgan("dev"));
 
+app.use(express.static(path.join(__dirname, "public")));
+
 app.use(require("../src/routes/index.routes"));
 app.use(require("../src/routes/notes.routes"));
 app.use(require("../src/routes/user.routes"));
